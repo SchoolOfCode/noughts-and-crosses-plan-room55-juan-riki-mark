@@ -1,4 +1,5 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=6963106&assignment_repo_type=AssignmentRepo)
+
 # Thinking in React Recap
 
 ## Noughts and Crosses
@@ -39,6 +40,7 @@ Find an [online version for them to play](https://playtictactoe.org/), or just a
 ### Look for patterns in these steps
 
 Player Move:
+
 - Pick a square
   - if the square is not empty, you can't pick it
   - if the square is empty, you can pick it
@@ -58,7 +60,7 @@ Player Move:
 - Draw a 3x3 grid of squares
 - First player is X
 - Player Move:
-- Choose a square  
+- Choose a square
   - if the square is not empty, you can't pick it
   - if the square is empty, you can pick it - put the player symbol in that square
 - Check if someone has won
@@ -74,14 +76,14 @@ State, behaviour, dependencies, show -> State, functions, props, render
 
 Wireframe. View parts. Behaviour parts.
 
-|   |   |   |
-|---|---|---|
-|   |   |   |
-|   |   |   |
+|     |     |     |
+| --- | --- | --- |
+|     |     |     |
+|     |     |     |
 
 `Your turn: X`
 
-___
+---
 
 Goes to these components:
 
@@ -110,5 +112,6 @@ Goes to these components:
 - Square
   - Props
     - make a move
+    - value
   - Render
-    - `"", X, or O`
+    - value (`"", X, or O`)
