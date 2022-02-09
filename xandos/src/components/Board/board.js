@@ -1,19 +1,11 @@
 import Square from "../Square/square";
 
-function Board() {
-  return (
-    <div className="Board">
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-    </div>
-  );
-}
+const Board = ({ squares, onClick }) => (
+  <div className="board">
+    {squares.map((square, index) => (
+      <Square key={index} value={square} onClick={() => onClick(index)} />
+    ))}
+  </div>
+);
 
 export default Board;
