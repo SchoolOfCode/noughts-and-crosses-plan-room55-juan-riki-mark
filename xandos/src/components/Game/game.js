@@ -7,7 +7,7 @@ const Game = () => {
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXisNext] = useState(true);
   const winner = calculateWinner(history[stepNumber]);
-  const xO = xIsNext ? "X" : "O";
+  const xO = xIsNext ? "🤖" : "👨";
 
   const handleClick = (i) => {
     const historyPoint = history.slice(0, stepNumber + 1);
@@ -29,7 +29,7 @@ const Game = () => {
 
   const renderMoves = () =>
     history.map((_step, move) => {
-      const destination = move ? `Go to move #${move}` : "Go to Start";
+      const destination = move ? `#${move}` : "Reset";
       return (
         <li key={move}>
           <button onClick={() => jumpTo(move)}>{destination}</button>
@@ -39,15 +39,17 @@ const Game = () => {
 
   return (
     <>
-      <h1>React Tic Tac Toe - With Hooks</h1>
+      <h1>
+        Robots <span className="versus">v</span> Humans
+      </h1>
       <Board squares={history[stepNumber]} onClick={handleClick} />
-      <div className="info-wrapper">
-        <div>
-          <h3>History</h3>
-          {renderMoves()}
-        </div>
-        <h3>{winner ? "Winner: " + winner : "Next Player: " + xO}</h3>
-      </div>
+      <section className="info-wrapper">
+        <header className="info-header">
+          <p>History</p>
+          <p>{winner ? "Winner: " + winner : "Next Player: " + xO}</p>
+        </header>
+        <ul className="move-list">{renderMoves()}</ul>
+      </section>
     </>
   );
 };

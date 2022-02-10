@@ -1,29 +1,125 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --navy: #243b7e;
+  --indigo: #61acd9;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    rgba(36, 59, 126, 1) 30%,
+    rgba(97, 172, 217, 1) 70%
+  );
+  color: white;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+h1 .versus {
+  font-size: 1.8rem;
+  padding: 0 1rem;
 }
 
 .board {
-  border: 1rem solid green;
-  background: yellow;
+  border: 0.5rem solid black;
+  border-radius: 10px;
+  background: black;
   width: 500px;
   height: 500px;
   display: grid;
-  grid-template: repeat(3, 1fr) / repeat (3, 1fr);
-  gap: 1rem;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  gap: 0.25rem;
+  box-shadow: 0 0 45px silver;
 }
 
 .squares {
-  background: blue;
+  background: silver;
   border: none;
+  border-radius: 10px;
   font-size: 5rem;
+  /* font-weight: 800; */
   cursor: pointer;
   outline: none;
+  box-shadow: inset 0 0 25px white;
+}
+
+.info-wrapper {
+  width: 100%;
+  padding: 1rem;
+}
+
+.info-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.info-header p {
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+}
+
+h3 {
+  padding: 1rem;
+}
+
+.move-list {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.move-list li {
+  list-style: none;
+}
+
+.move-list li:first-of-type {
+  position: absolute;
+  right: 0;
+}
+
+.info-wrapper button {
+  background: silver;
+  color: black;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-style: solid;
+  border-color: #272727;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px white;
+}
+
+.move-list li:first-of-type button {
+  background: black;
+  color: #eee;
+  box-shadow: none;
 }
